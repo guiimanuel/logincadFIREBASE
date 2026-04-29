@@ -7,8 +7,9 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth"
 function registerScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const auth = getAuth();
-  const registerUser = () => {
+  
+  function registerUser() {
+    const auth = getAuth();
     createUserWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
         // Signed in
@@ -20,10 +21,9 @@ function registerScreen({ navigation }) {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
         alert('Erro ao cadastrar usuário');
-        // ..
       })
   };
-
+  
   return (
     <View>
       <StatusBar style="auto" />

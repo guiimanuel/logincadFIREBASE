@@ -7,8 +7,9 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 function loginScreen({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const auth = getAuth();
-  const signInUser = () => {
+
+  function signInUser() {
+    const auth = getAuth();
     signInWithEmailAndPassword(auth, email, senha)
       .then((userCredential) => {
         // Signed in
@@ -19,8 +20,9 @@ function loginScreen({ navigation }) {
         const errorCode = error.code;
         const errorMessage = error.message;
         console.log(errorCode, errorMessage);
+        alert('Erro ao fazer login');
       });
-  };
+  }
 
   return (
     <View>
