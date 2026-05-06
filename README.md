@@ -1,4 +1,4 @@
-<h1>Conversor de moedas PRO</h1><br>
+<h1>Conversor de moedas PRO</h1>
 Aplicação desenvolvida com React Native.<br>
 Conexao de APIs com biblioteca axios, hospedagem no console Firebase.<br>
 API pública de conversão de moedas.<br>
